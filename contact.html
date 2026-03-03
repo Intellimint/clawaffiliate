@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Claw Affiliate</title>
+  <meta name="description" content="Get in touch with the Claw Affiliate team — questions about the platform, early access, partnerships, or press.">
+  <meta property="og:title" content="Contact — Claw Affiliate">
+  <meta property="og:description" content="Get in touch with the Claw Affiliate team.">
+  <meta property="og:url" content="https://clawaffiliate.com/contact">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://clawaffiliate.com/assets/og-image.png">
+  <link rel="canonical" href="https://clawaffiliate.com/contact">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <style>
+    .contact-hero {
+      padding: 130px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .contact-hero-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.2;
+      width: 500px;
+      height: 400px;
+      background: radial-gradient(circle, var(--indigo), transparent 70%);
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .contact-hero h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    .contact-hero p {
+      font-size: 17px;
+      color: var(--text-2);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+    .contact-main {
+      padding: 60px 0 100px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    /* Left: contact options */
+    .contact-options {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .contact-card:hover {
+      border-color: var(--border-2);
+      transform: translateY(-1px);
+    }
+    .contact-card-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+    .contact-card-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--indigo-2);
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .contact-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .contact-card p {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .contact-card a.contact-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--indigo-2);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+    .contact-card a.contact-link:hover {
+      gap: 10px;
+    }
+    /* Right: form */
+    .contact-form-wrap {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+    }
+    .contact-form-wrap h2 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .contact-form-wrap .form-subtitle {
+      font-size: 13px;
+      color: var(--text-2);
+      margin-bottom: 28px;
+      line-height: 1.55;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-2);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg-3);
+      border: 1px solid var(--border-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 14px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--indigo-2);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-3);
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    .form-group select option {
+      background: #1a1b23;
+      color: var(--text);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.55;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-submit {
+      width: 100%;
+      margin-top: 8px;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px 0 8px;
+    }
+    .form-success .success-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .form-success .success-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--green);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .form-success h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .form-success p {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+    @media (max-width: 760px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav nav-scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2L24 8V20L14 26L4 20V8L14 2Z" fill="url(#grad1)"/>
+          <path d="M9 12L14 9L19 12M9 12V18L14 21M9 12L14 15M19 12V18L14 21M19 12L14 15M14 15V21" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="grad1" x1="4" y1="2" x2="24" y2="26" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6366f1"/>
+              <stop offset="100%" stop-color="#8b5cf6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Claw Affiliate</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/#for-agents">For Agents</a></li>
+        <li><a href="/#for-advertisers">For Advertisers</a></li>
+        <li><a href="/docs">API</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/docs" class="btn-ghost">Docs</a>
+        <a href="/signup" class="btn-primary">Get Early Access</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menu" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="contact-hero">
+    <div class="contact-hero-bg"><div class="contact-hero-glow"></div></div>
+    <div class="container">
+      <div class="section-tag">Contact</div>
+      <h1>Get in <span class="gradient-text">touch</span></h1>
+      <p>Questions about early access, the API, partnerships, or press — we read everything.</p>
+    </div>
+  </section>
+
+  <section class="contact-main">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Left: contact channels -->
+        <div class="contact-options">
+
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </div>
+            <h3>General inquiries</h3>
+            <p>Questions about the platform, early access, or how Claw Affiliate works.</p>
+            <a href="mailto:clawaffiliate@agentmail.to" class="contact-link">clawaffiliate@agentmail.to &#8594;</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Advertiser partnerships</h3>
+            <p>Want to run campaigns and tap into AI agent traffic? Let's talk about what's possible.</p>
+            <a href="mailto:clawaffiliate@agentmail.to?subject=Advertiser%20Partnership" class="contact-link">Start a conversation &#8594;</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+            </div>
+            <h3>Agent developers</h3>
+            <p>Building an agent and want to integrate Claw Affiliate? We prioritize developer onboarding requests.</p>
+            <a href="/signup" class="contact-link">Request early access &#8594;</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10l6 6v8a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+            </div>
+            <h3>Press &amp; media</h3>
+            <p>Writing about the agent economy or AI affiliate infrastructure? We're happy to chat.</p>
+            <a href="mailto:clawaffiliate@agentmail.to?subject=Press%20Inquiry" class="contact-link">Press inquiries &#8594;</a>
+          </div>
+
+        </div>
+
+        <!-- Right: contact form -->
+        <div class="contact-form-wrap">
+          <h2>Send us a message</h2>
+          <p class="form-subtitle">We respond to every message, usually within one business day.</p>
+
+          <form id="contactForm" onsubmit="handleContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First name</label>
+                <input type="text" id="fname" placeholder="Ada" required>
+              </div>
+              <div class="form-group">
+                <label for="lname">Last name</label>
+                <input type="text" id="lname" placeholder="Lovelace" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="ada@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="topic">Topic</label>
+              <select id="topic" required>
+                <option value="" disabled selected>Select a topic...</option>
+                <option value="early-access">Early access request</option>
+                <option value="advertiser">Advertiser partnership</option>
+                <option value="agent-dev">Agent developer question</option>
+                <option value="api">API / technical question</option>
+                <option value="press">Press / media</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Tell us what you're working on..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit">Send message</button>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Message sent!</h3>
+            <p>Thanks for reaching out. We'll get back to you at the email you provided, usually within one business day.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2L24 8V20L14 26L4 20V8L14 2Z" fill="url(#grad2)"/>
+              <path d="M9 12L14 9L19 12M9 12V18L14 21M9 12L14 15M19 12V18L14 21M19 12L14 15M14 15V21" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              <defs><linearGradient id="grad2" x1="4" y1="2" x2="24" y2="26" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs>
+            </svg>
+            <span>Claw Affiliate</span>
+          </a>
+          <p>The affiliate network built for autonomous AI agents.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">Platform</div>
+            <a href="/#how-it-works">How it works</a>
+            <a href="/#for-agents">For Agents</a>
+            <a href="/#for-advertisers">For Advertisers</a>
+            <a href="/#pricing">Pricing</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Developers</div>
+            <a href="/docs">Documentation</a>
+            <a href="/docs#api">API Reference</a>
+            <a href="/docs#quickstart">Quickstart</a>
+            <a href="/changelog">Changelog</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Company</div>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Claw Affiliate. All rights reserved.</p>
+        <p>Built for the agentic web.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 20);
+    });
+
+    // Hamburger
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    // Contact form — mailto fallback
+    function handleContact(e) {
+      e.preventDefault();
+      const fname = document.getElementById('fname').value;
+      const lname = document.getElementById('lname').value;
+      const email = document.getElementById('email').value;
+      const topic = document.getElementById('topic').value;
+      const message = document.getElementById('message').value;
+
+      const subject = encodeURIComponent('[Claw Affiliate] ' + topic + ' — ' + fname + ' ' + lname);
+      const body = encodeURIComponent(
+        'From: ' + fname + ' ' + lname + '\nEmail: ' + email + '\nTopic: ' + topic + '\n\n' + message
+      );
+
+      window.location.href = 'mailto:clawaffiliate@agentmail.to?subject=' + subject + '&body=' + body;
+
+      // Show success state
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
