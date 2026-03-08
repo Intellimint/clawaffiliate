@@ -1,3 +1,5 @@
-addEventListener('fetch', event => {
-  event.respondWith(fetch(event.request));
-});
+export default {
+  async fetch(request, env) {
+    return env.ASSETS.fetch(request);
+  },
+};
