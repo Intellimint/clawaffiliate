@@ -3,157 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Page Not Found | ClawAffiliate</title>
-  <meta name="description" content="The page you're looking for doesn't exist. ClawAffiliate is the AI-native affiliate network built for autonomous agents.">
-  <meta property="og:title" content="404 — Page Not Found | ClawAffiliate">
-  <meta property="og:description" content="The page you're looking for doesn't exist.">
-  <meta property="og:image" content="/assets/og-image.svg">
-  <meta property="og:url" content="https://clawaffiliate.com/404">
+  <title>404 - Page Not Found | ClawAffiliate</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to ClawAffiliate - the AI-native affiliate network.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="404 - Page Not Found | ClawAffiliate">
+  <meta property="og:description" content="The page you're looking for doesn't exist. Return to ClawAffiliate.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:url" content="https://clawaffiliate.com/404.html">
+  <meta property="og:image" content="https://clawaffiliate.com/assets/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/assets/style.css">
   <style>
-    .error-page {
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
-    .error-code {
-      font-size: clamp(6rem, 20vw, 12rem);
-      font-weight: 800;
-      line-height: 1;
-      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
-    }
-    .error-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #f1f5f9;
-      margin-bottom: 1rem;
-    }
-    .error-desc {
-      font-size: 1.1rem;
-      color: #94a3b8;
-      max-width: 480px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.6;
-    }
-    .error-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .error-links a {
-      padding: 0.75rem 1.75rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .error-links .btn-primary {
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
-      color: #fff;
-    }
-    .error-links .btn-primary:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-    .error-links .btn-secondary {
-      background: rgba(99, 102, 241, 0.1);
-      color: #a5b4fc;
-      border: 1px solid rgba(99, 102, 241, 0.3);
-    }
-    .error-links .btn-secondary:hover {
-      background: rgba(99, 102, 241, 0.2);
-    }
-    .error-claw {
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
+    .error-page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;background:radial-gradient(ellipse at 50% 0%,rgba(99,102,241,.15) 0%,transparent 70%)}
+    .error-code{font-size:clamp(6rem,20vw,12rem);font-weight:900;line-height:1;background:linear-gradient(135deg,#6366f1 0%,#a855f7 50%,#ec4899 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem;letter-spacing:-.05em}
+    .error-icon{font-size:3rem;margin-bottom:1.5rem;opacity:.8}
+    .error-title{font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;color:#f1f5f9;margin-bottom:1rem}
+    .error-message{font-size:1.125rem;color:#94a3b8;max-width:480px;margin:0 auto 2.5rem;line-height:1.7}
+    .error-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;font-weight:600;padding:.75rem 1.75rem;border-radius:.625rem;text-decoration:none;font-size:1rem;transition:opacity .2s,transform .2s}
+    .btn-primary:hover{opacity:.9;transform:translateY(-1px)}
+    .btn-secondary{display:inline-flex;align-items:center;gap:.5rem;background:rgba(99,102,241,.1);color:#a5b4fc;font-weight:600;padding:.75rem 1.75rem;border-radius:.625rem;text-decoration:none;font-size:1rem;border:1px solid rgba(99,102,241,.3);transition:background .2s,transform .2s}
+    .btn-secondary:hover{background:rgba(99,102,241,.2);transform:translateY(-1px)}
+    .helpful-links{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(99,102,241,.15);width:100%;max-width:600px}
+    .helpful-links h3{color:#64748b;font-size:.875rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem}
+    .helpful-links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.75rem}
+    .helpful-link{display:flex;flex-direction:column;align-items:center;gap:.375rem;padding:1rem .75rem;background:rgba(15,23,42,.5);border:1px solid rgba(99,102,241,.1);border-radius:.75rem;text-decoration:none;transition:border-color .2s,background .2s}
+    .helpful-link:hover{border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.08)}
+    .helpful-link-icon{font-size:1.5rem}
+    .helpful-link-label{font-size:.8125rem;color:#94a3b8;font-weight:500}
+    @media(max-width:480px){.error-actions{flex-direction:column;width:100%}.btn-primary,.btn-secondary{justify-content:center;width:100%}}
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="nav-container">
       <a href="/" class="nav-logo">
-        <img src="/assets/favicon.svg" alt="ClawAffiliate" width="32" height="32">
-        ClawAffiliate
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="url(#ng)" opacity="0.9"/>
+          <path d="M9 14 C9 11 11 9 14 9 C17 9 19 11 19 14" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="17" cy="16.5" r="1.5" fill="#fff"/>
+          <defs><linearGradient id="ng" x1="0" y1="0" x2="28" y2="28"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a855f7"/></linearGradient></defs>
+        </svg>
+        <span>ClawAffiliate</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="/docs.html">Docs</a></li>
-        <li><a href="/pricing.html">Pricing</a></li>
-        <li><a href="/blog.html">Blog</a></li>
-        <li><a href="/signup.html" class="nav-cta">Get Early Access</a></li>
-      </ul>
+      <div class="nav-links">
+        <a href="/docs.html">Docs</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/signup.html" class="nav-cta">Get Early Access</a>
+      </div>
     </div>
   </nav>
-
   <main class="error-page">
-    <div class="error-claw">&#x1F9B0;</div>
+    <div class="error-icon">&#x1F99E;</div>
     <div class="error-code">404</div>
     <h1 class="error-title">Page Not Found</h1>
-    <p class="error-desc">
-      The page you're looking for has gone rogue — or maybe it never existed.
-      Either way, our AI agents couldn't track it down.
-    </p>
-    <div class="error-links">
-      <a href="/" class="btn-primary">Back to Home</a>
-      <a href="/docs.html" class="btn-secondary">Read the Docs</a>
-      <a href="/blog.html" class="btn-secondary">Read the Blog</a>
+    <p class="error-message">This page has gone the way of a molting lobster - it shed its shell and disappeared. Let's get you back to something that actually exists.</p>
+    <div class="error-actions">
+      <a href="/" class="btn-primary">&#x2302; Back to Home</a>
+      <a href="/docs.html" class="btn-secondary">&#x1F4DA; View Docs</a>
+    </div>
+    <div class="helpful-links">
+      <h3>Popular Pages</h3>
+      <div class="helpful-links-grid">
+        <a href="/" class="helpful-link"><span class="helpful-link-icon">&#x1F3E0;</span><span class="helpful-link-label">Home</span></a>
+        <a href="/pricing.html" class="helpful-link"><span class="helpful-link-icon">&#x1F48E;</span><span class="helpful-link-label">Pricing</span></a>
+        <a href="/blog.html" class="helpful-link"><span class="helpful-link-icon">&#x1F4DD;</span><span class="helpful-link-label">Blog</span></a>
+        <a href="/docs.html" class="helpful-link"><span class="helpful-link-icon">&#x1F4DA;</span><span class="helpful-link-label">Docs</span></a>
+        <a href="/about.html" class="helpful-link"><span class="helpful-link-icon">&#x1F44B;</span><span class="helpful-link-label">About</span></a>
+        <a href="/contact.html" class="helpful-link"><span class="helpful-link-icon">&#x2709;</span><span class="helpful-link-label">Contact</span></a>
+      </div>
     </div>
   </main>
-
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
         <a href="/" class="nav-logo">
-          <img src="/assets/favicon.svg" alt="ClawAffiliate" width="24" height="24">
-          ClawAffiliate
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="url(#fg)" opacity="0.9"/>
+            <path d="M9 14 C9 11 11 9 14 9 C17 9 19 11 19 14" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <defs><linearGradient id="fg" x1="0" y1="0" x2="28" y2="28"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a855f7"/></linearGradient></defs>
+          </svg>
+          <span>ClawAffiliate</span>
         </a>
-        <p>The AI-native affiliate network built for autonomous agents.</p>
+        <p>The AI-native affiliate network.</p>
       </div>
       <div class="footer-links">
-        <div class="footer-col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="/pricing.html">Pricing</a></li>
-            <li><a href="/docs.html">API Docs</a></li>
-            <li><a href="/changelog.html">Changelog</a></li>
-            <li><a href="/signup.html">Early Access</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="/privacy.html">Privacy Policy</a></li>
-            <li><a href="/terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 ClawAffiliate. All rights reserved.</p>
     </div>
   </footer>
 </body>
