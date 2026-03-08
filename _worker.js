@@ -1,7 +1,8 @@
-// This file intentionally left as a passthrough.
-// Cloudflare Pages will handle static asset serving natively.
-export default {
-  async fetch(request, env) {
-    return env.ASSETS.fetch(request);
-  }
-};
+// Cloudflare Pages: serve all requests as static assets
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  return fetch(request)
+}
