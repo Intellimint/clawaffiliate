@@ -1,8 +1,6 @@
-// Cloudflare Pages: serve all requests as static assets
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
-
-async function handleRequest(request) {
-  return fetch(request)
-}
+// Cloudflare Pages Module Worker — correctly proxies all requests to static assets
+export default {
+  async fetch(request, env) {
+    return env.ASSETS.fetch(request);
+  }
+};
