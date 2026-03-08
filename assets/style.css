@@ -442,27 +442,27 @@ a:hover { color: var(--accent); }
 }
 .api-description { font-size: 13px; color: var(--text-muted); }
 
-/* ---- Pricing ---- */
-.pricing-grid {
+/* ---- Pricing (homepage section) ---- */
+.pricing-grid-home {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
   align-items: start;
 }
-.pricing-card {
+.pricing-card-home {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 36px;
   transition: all var(--transition);
 }
-.pricing-card.featured {
+.pricing-card-home.featured {
   background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.08));
   border-color: var(--primary);
   box-shadow: var(--glow);
   position: relative;
 }
-.pricing-card.featured::before {
+.pricing-card-home.featured::before {
   content: 'Most Popular';
   position: absolute;
   top: -12px; left: 50%; transform: translateX(-50%);
@@ -479,9 +479,9 @@ a:hover { color: var(--accent); }
 .pricing-price { font-size: 48px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin-bottom: 8px; }
 .pricing-price span { font-size: 16px; font-weight: 500; color: var(--text-muted); }
 .pricing-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 28px; }
-.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
-.pricing-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; }
-.pricing-features li::before { content: '\2713'; color: var(--success); font-weight: 700; flex-shrink: 0; }
+.pricing-features-home { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.pricing-features-home li { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.pricing-features-home li::before { content: '\2713'; color: var(--success); font-weight: 700; flex-shrink: 0; }
 
 /* ---- Terminal ---- */
 .terminal {
@@ -670,7 +670,6 @@ a:hover { color: var(--accent); }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   .stats-bar .container { gap: 24px; }
-  .pricing-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: 1fr; }
 }
 
@@ -681,3 +680,354 @@ a:hover { color: var(--accent); }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .btn-lg { padding: 12px 20px; font-size: 15px; }
 }
+
+/* ============================================================
+   SIGNUP PAGE
+   ============================================================ */
+.signup-page {
+  min-height: 100vh;
+  padding: 120px 24px 80px;
+}
+.signup-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.signup-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.signup-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 16px 0 20px;
+  color: #f1f5f9;
+}
+.signup-header p {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.signup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .signup-grid { grid-template-columns: 1fr; }
+}
+.signup-form-wrapper {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 40px;
+}
+.signup-form .form-group {
+  margin-bottom: 24px;
+}
+.signup-form label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+.signup-form input,
+.signup-form select,
+.signup-form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: #f1f5f9;
+  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.signup-form input:focus,
+.signup-form select:focus,
+.signup-form textarea:focus {
+  outline: none;
+  border-color: #818cf8;
+}
+.signup-form select option { background: #0f172a; }
+.btn-full { width: 100%; text-align: center; justify-content: center; }
+.form-disclaimer {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin-top: 12px;
+}
+.signup-success {
+  text-align: center;
+  padding: 40px 20px;
+}
+.success-icon {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, #818cf8, #a855f7);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; color: white;
+  margin: 0 auto 24px;
+}
+.signup-benefits h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 28px;
+}
+.benefits-list {
+  list-style: none;
+  padding: 0; margin: 0 0 40px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.benefits-list li {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.benefit-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.benefits-list strong {
+  display: block;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 4px;
+}
+.benefits-list p {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+.signup-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 24px;
+}
+.stat { text-align: center; }
+.stat-num {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #818cf8, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ============================================================
+   PRICING PAGE
+   ============================================================ */
+.pricing-page {
+  min-height: 100vh;
+  padding: 80px 24px;
+}
+.pricing-header {
+  text-align: center;
+  padding: 60px 24px 48px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.pricing-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 16px 0 20px;
+  color: #f1f5f9;
+}
+.pricing-header p {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+.pricing-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.toggle-label {
+  font-size: 0.9375rem;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.toggle-label.active { color: #f1f5f9; font-weight: 600; }
+.pricing-toggle {
+  width: 56px; height: 28px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.toggle-pill {
+  width: 22px; height: 22px;
+  background: linear-gradient(135deg, #818cf8, #a855f7);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px; left: 3px;
+  transition: transform 0.3s ease;
+}
+.pricing-container { max-width: 1100px; margin: 0 auto; }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0 24px;
+}
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+}
+.pricing-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.pricing-card-featured {
+  background: rgba(129,140,248,0.08);
+  border-color: rgba(129,140,248,0.3);
+  transform: scale(1.02);
+}
+.pricing-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #818cf8, #a855f7);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.pricing-card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0 0 12px;
+}
+.pricing-amount {
+  margin-bottom: 16px;
+}
+.price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #f1f5f9;
+}
+.price-prefix {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #818cf8, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.price-suffix {
+  display: block;
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+.pricing-card-header p {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+.pricing-features {
+  list-style: none;
+  padding: 0; margin: 0 0 32px;
+  flex: 1;
+}
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.pricing-features li.disabled { color: #475569; }
+.check { color: #818cf8; font-weight: 700; flex-shrink: 0; }
+.x { color: #475569; flex-shrink: 0; }
+.pricing-note {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: #475569;
+  margin-top: 12px;
+}
+.pricing-faq {
+  max-width: 900px;
+  margin: 80px auto 0;
+  padding: 0 24px;
+}
+.pricing-faq h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+@media (max-width: 640px) { .faq-grid { grid-template-columns: 1fr; } }
+.faq-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin: 0 0 12px;
+}
+.faq-item p {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin: 0;
+}
+.pricing-cta {
+  text-align: center;
+  padding: 80px 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.pricing-cta h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 16px;
+}
+.pricing-cta p {
+  color: #94a3b8;
+  margin-bottom: 32px;
+}
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.nav a.active { color: #818cf8; }
